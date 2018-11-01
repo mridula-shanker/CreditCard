@@ -2,7 +2,7 @@
 public class CreditCard 
 {
 
-		private final int CARDNUM;
+		private final int CARD_NUM;
 		private double limit;
 		private double balance;
 		private double interestRate;
@@ -10,7 +10,7 @@ public class CreditCard
 		
 		public CreditCard(int cN, double l, double iR, String oN)
 		{
-			cardNum = cN;
+			CARD_NUM = cN;
 			limit = l;
 			interestRate = iR;
 			ownerName=oN;
@@ -28,8 +28,39 @@ public class CreditCard
 			balance = balance - b;
 		}
 		
-		public double chargeInterest()
+		public void chargeInterest()
 		{
 			balance = balance + (interestRate * balance);
 		}
+		
+		public int getCardNum()
+		{
+			return CARD_NUM;
+		}
+		
+		public double getLimit()
+		{
+			return limit;
+		}
+		
+		public double getBalance()
+		{
+			return balance;
+		}
+		
+		public double getInterestRate()
+		{
+			return interestRate;
+		}
+		
+		public String getOwnerName()
+		{
+			return ownerName;
+		}
+		
+		public String toString()
+		{
+			return " Card Number: " + CARD_NUM + " Name: " + ownerName + " Balance: " + balance + " Rate: " + interestRate + " Limit: " + limit;
+		}
+	
 }
